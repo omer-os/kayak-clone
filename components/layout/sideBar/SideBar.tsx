@@ -16,29 +16,26 @@ import { BsBookmarksFill } from "react-icons/bs";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function SideBar() {
+export default function SideBar({ ShowSideBar, setShowSideBar }: any) {
   const pathname = usePathname();
-
-  const [ShowSideBar, setShowSideBar] = useState(true);
 
   return (
     <motion.div
-      animate={{
-        width: ShowSideBar ? "60px" : "auto",
-      }}
-      className="bg-white z-50 p-2 flex flex-col border-r border-zinc-300 h-full w-[15em] lg:relative fixed top-0 bottom-0 left-0 overflow-hidden"
+      className={`bg-white z-50 flex flex-col border-r border-zinc-300 h-full md:w-[15em] w-0 md:relative fixed top-0 bottom-0 left-0 overflow-hidden transition-all ${
+        ShowSideBar && "md:!w-[4em] w-full"
+      }`}
     >
       <button
         onClick={() => setShowSideBar(!ShowSideBar)}
-        className="hover:bg-zinc-300 p-2 rounded m-2 text-zinc-600 w-max"
+        className="hover:bg-zinc-300 p-2 rounded m-2 md:text-zinc-600 w-max fixed top-1.5 left-1.5"
       >
-        <HiOutlineMenu size={25} />
+        <HiOutlineMenu size={20} />
       </button>
 
-      <div className="flex flex-col mt-8 gap-1">
+      <div className="flex m-2 flex-col mt-20 gap-1">
         <div className="hover:bg-zinc-300 rounded flex gap-4 min-w-max items-center capitalize py-2 px-4">
           <HiOutlineUserCircle size={20} />
-          <p className="">Sign in</p>
+          {!ShowSideBar && <p className="">Sign in</p>}
         </div>
 
         <div className="w-full h-[0.05em] bg-zinc-300" />
@@ -71,6 +68,7 @@ export default function SideBar() {
           },
         ].map((i) => (
           <ListItem
+            ShowSideBar={ShowSideBar}
             focus={pathname === i.link ? true : false}
             key={i.link}
             Icon={i.Icon}
@@ -99,6 +97,7 @@ export default function SideBar() {
           },
         ].map((i) => (
           <ListItem
+            ShowSideBar={ShowSideBar}
             focus={pathname === i.link ? true : false}
             key={i.link}
             Icon={i.Icon}
@@ -109,6 +108,7 @@ export default function SideBar() {
         <div className="w-full h-[0.05em] bg-zinc-300" />
 
         <ListItem
+          ShowSideBar={ShowSideBar}
           focus={pathname === "/feedback" ? true : false}
           Icon={MdFeedback}
           link="/feedback"
@@ -118,6 +118,7 @@ export default function SideBar() {
         <div className="w-full h-[0.05em] bg-zinc-300" />
 
         <ListItem
+          ShowSideBar={ShowSideBar}
           focus={pathname === "/trips" ? true : false}
           Icon={BsBookmarksFill}
           link="/trips"
@@ -137,19 +138,21 @@ type ListItemProps = {
   text: string;
   link: string;
   focus: boolean;
+  ShowSideBar: boolean;
 };
-const ListItem = ({ Icon, text, link, focus }: ListItemProps) => {
+const ListItem = ({ Icon, ShowSideBar, text, link, focus }: ListItemProps) => {
   return (
     <Link
       href={link}
-      className={`active:scale-95 rounded flex gap-4 items-center text-sm capitalize py-3 px-4  transition-all relative min-w-max
-      ${focus && "font-bold"}
-      `}
+      className={`active:scale-95 rounded flex gap-4 items-center text-sm capitalize py-3 px-4 transition-all relative min-w-max hover:ring
+      ${focus && "font-bold"}`}
     >
       {focus && (
         <motion.div
           layoutId="SideBarItem"
-          className="inset-0 bg-zinc-300 rounded absolute z-10"
+          className={`inset-0 left-0 top-0 bg-zinc-300 rounded absolute z-10 ${
+            ShowSideBar && ""
+          }`}
         />
       )}
 
@@ -159,7 +162,7 @@ const ListItem = ({ Icon, text, link, focus }: ListItemProps) => {
       >
         <Icon size={20} />
       </span>
-      <p className="z-20 ">{text}</p>
+      <p className={`z-20 ${ShowSideBar && "md:hidden"}`}>{text}</p>
     </Link>
   );
 };
