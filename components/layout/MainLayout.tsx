@@ -23,7 +23,7 @@ export default function MainLayout({
             ShowSideBar={ShowSideBar}
             setShowSideBar={setShowSideBar}
           />
-          <div className="p-4">{children}</div>
+          <div className="py-5 md:px-10 px-5">{children}</div>
         </div>
       </div>
     </>
