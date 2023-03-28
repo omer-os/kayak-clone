@@ -48,11 +48,11 @@ export default function HomeInput({
 
   return (
     <>
-      <div className="flex flex-col relative flex-1">
+      <motion.div layout className="flex flex-col relative flex-1">
         <Combobox value={State} onChange={setState}>
           <div className="relative">
             <Combobox.Input
-              className="w-full h-full bg-zinc-200 sm:py-3 py-4 rounded px-4 pl-10"
+              className="w-full h-full bg-zinc-200 hover:bg-zinc-300 transition-all cursor-pointer sm:py-3.5 py-4 rounded px-4 pl-10"
               value={State}
               onChange={(e) => {
                 setState(e.target.value);
@@ -63,7 +63,9 @@ export default function HomeInput({
               type="text"
               placeholder={placeholder}
             />
-            <div className="z-10 absolute sm:top-3.5 top-[1.3em] left-4">{icon}</div>
+            <div className="z-10 absolute sm:top-3.5 top-[1.3em] left-4">
+              {icon}
+            </div>
           </div>
 
           <Combobox.Options
@@ -132,7 +134,7 @@ export default function HomeInput({
             })}
           </Combobox.Options>
         </Combobox>
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -22,9 +22,8 @@ export default function HomeDropDown({
       <Listbox value={State} onChange={(e) => setState(e)}>
         <Listbox.Button
           className={
-            "flex gap-2 items-center text-sm capitalize transition-all hover:ring p-2 rounded w-max"
+            "flex gap-2 items-center text-xs capitalize transition-all hover:ring p-2 rounded w-max py-2 px-3 "
           }
-          // onClick={() => setOpen(!Open)}
         >
           {State}
           <AiOutlineCaretDown
@@ -38,7 +37,7 @@ export default function HomeDropDown({
         >
           {options.map((option, index) => (
             <Listbox.Option
-              className={`py-2 px-3 cursor-pointer hover:bg-zinc-100 capitalize rounded ${
+              className={`py-2 px-3 cursor-pointer hover:bg-zinc-100 capitalize rounded text-sm ${
                 State === option && "bg-zinc-200"
               }`}
               key={index}

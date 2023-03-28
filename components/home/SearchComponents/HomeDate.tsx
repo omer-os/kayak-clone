@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 import React from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { BsFillCalendar2DateFill } from "react-icons/bs";
@@ -22,10 +25,13 @@ export default function HomeDate({
       onClick={() => setShowDateComponent(true)}
       className={`flex gap-2 ${
         TripDirection !== "one way trip" && "flex-1"
-      } md:flex-auto flex-1`}
+      } md:!flex-none flex-1 `}
     >
-      <div className="relative flex-1 group min-w-[8em] lg:max-w-[13em]">
-        <button className="bg-zinc-200 pl-10  text-left w-full p-3 px-4 rounded absolute hover:!bg-zinc-300 transition-all active:scale-95">
+      <motion.div
+        layout
+        className="relative flex-1 group min-w-[8em] lg:max-w-[13em]"
+      >
+        <button className="bg-zinc-200 pl-10  text-left w-full p-3 px-4 rounded  hover:!bg-zinc-300 transition-all active:scale-95">
           2023-3-3
         </button>
 
@@ -40,10 +46,13 @@ export default function HomeDate({
             <BiChevronRight />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {TripDirection === "round trip" && (
-        <div className="relative flex-1 group min-w-[8em] lg:max-w-[13em]">
+        <motion.div
+          layout
+          className="relative flex-1 group min-w-[8em] lg:max-w-[13em]"
+        >
           <button className="hover:!bg-zinc-300 transition-all bg-zinc-200 pl-10  text-left w-full p-3 px-4 rounded active:scale-95">
             2023-3-3
           </button>
@@ -59,7 +68,7 @@ export default function HomeDate({
               <BiChevronRight />
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );

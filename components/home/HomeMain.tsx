@@ -1,6 +1,8 @@
 import React from "react";
-import HomeDropDown from "./components/HomeDropDown";
-import HomeSearchContainer from "./components/HomeSearchContainer";
+import HomeSec2 from "./OtherComponents/HomeSec2";
+import HomeSec3 from "./OtherComponents/HomeSec3";
+import HomeDropDown from "./SearchComponents/HomeDropDown";
+import HomeSearchContainer from "./SearchComponents/HomeSearchContainer";
 
 export default function HomeMain() {
   return (
@@ -10,6 +12,8 @@ export default function HomeMain() {
       </div>
 
       <HomeSearchContainer />
+      <HomeSec2 />
+      <HomeSec3 />
     </div>
   );
 }

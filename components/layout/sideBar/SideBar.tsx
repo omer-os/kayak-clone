@@ -1,13 +1,13 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 
 import { FaPlaneDeparture } from "react-icons/fa";
 import { IoIosBed } from "react-icons/io";
-import { IoCarSport } from "react-icons/io5";
+import { IoCarSport, IoClose } from "react-icons/io5";
 import { GiPalmTree } from "react-icons/gi";
 import { MdTrain, MdFeedback } from "react-icons/md";
 import { BiWorld, BiError } from "react-icons/bi";
@@ -21,16 +21,24 @@ export default function SideBar({ ShowSideBar, setShowSideBar }: any) {
 
   return (
     <motion.div
-      className={`bg-white z-50 flex flex-col border-r border-zinc-300 h-full md:w-[15em] w-0 md:relative fixed top-0 bottom-0 left-0 overflow-hidden transition-all ${
+      className={`bg-white z-50 flex flex-col border-r border-zinc-300 md:w-[15em] w-0  fixed top-0 bottom-0 left-0 overflow-hidden transition-all ${
         ShowSideBar && "md:!w-[4em] w-full"
       }`}
     >
-      <button
-        onClick={() => setShowSideBar(!ShowSideBar)}
-        className="hover:bg-zinc-300 p-2 rounded m-2 md:text-zinc-600 w-max fixed top-1.5 left-1.5"
+      <div
+        className={`md:text-zinc-600 flex items-center justify-center p-[.8em]  fixed top-0 left-0 bg-white ${
+          !ShowSideBar && "!justify-start"
+        } transition-all
+        shadow-none
+       `}
       >
-        <HiOutlineMenu size={20} />
-      </button>
+        <button
+          onClick={() => setShowSideBar(!ShowSideBar)}
+          className="p-2 bg-white z-50 relative hover:bg-zinc-300 rounded transition-all active:scale-90 "
+        >
+          {!ShowSideBar ? <HiOutlineMenu size={20} /> : <IoClose size={20} />}
+        </button>
+      </div>
 
       <div className="flex m-2 flex-col mt-20 gap-1">
         <div className="hover:bg-zinc-300 rounded flex gap-4 min-w-max items-center capitalize py-2 px-4">
