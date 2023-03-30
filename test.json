@@ -1,0 +1,84 @@
+[
+  {
+    "validatingCarrier": {
+      "id": "AB",
+      "logo": "https://example.com/logo.png",
+      "en": "Airline 1",
+      "ar": "الخطوط الجوية 1"
+    },
+    "cabin": "Economy",
+    "Price": {
+      "currencyCode": "USD",
+      "Base": 500,
+      "TotalTaxes": 100,
+      "TotalPrice": 600
+    },
+    "totalDuration": {
+      "id": "duration1",
+      "en": "Duration 1",
+      "ar": "المدة 1"
+    },
+    "totalStops": 1,
+    "Departure": {
+      "location": {
+        "id": "LAX",
+        "en": "Los Angeles",
+        "ar": "لوس أنجلوس"
+      },
+      "date": "2022-05-01",
+      "time": "10:00"
+    },
+    "Arrival": {
+      "location": {
+        "id": "JFK",
+        "en": "New York",
+        "ar": "نيويورك"
+      },
+      "date": "2022-05-01",
+      "time": "18:00"
+    },
+    "flightSegments": [
+      {
+        "sequence": 1,
+        "connectionDuration": "02:00",
+        "boundFlightsInd": true,
+        "Flight": {
+          "id": "AB123",
+          "distance": 2000,
+          "duration": {
+            "id": "duration2",
+            "en": "Duration 2",
+            "ar": "المدة 2"
+          },
+          "carrier": {
+            "id": "AB",
+            "logo": "https://example.com/logo.png",
+            "en": "Airline 1",
+            "ar": "الخطوط الجوية 1"
+          },
+          "number": "123",
+          "operatingCarrier": "null",
+          "equipment": "null",
+          "Departure": {
+            "location": {
+              "id": "LAX",
+              "en": "Los Angeles",
+              "ar": "لوس أنجلوس"
+            },
+            "date": "2022-05-01",
+            "time": "10:00"
+          },
+          "Arrival": {
+            "location": {
+              "id": "JFK",
+              "en": "New York",
+              "ar": "نيويورك"
+            },
+            "date": "2022-05-01",
+            "time": "18:00"
+          }
+        }
+      }
+    ]
+  }
+]
