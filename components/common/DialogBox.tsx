@@ -27,7 +27,7 @@ export default function DialogBox({
 
   return (
     <>
-      <div className="fixed z-50 inset-0 flex items-center justify-center p-6">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
         <motion.div
           animate={{ opacity: [0, 1] }}
           exit={{ opacity: 0 }}

@@ -48,28 +48,26 @@ export default function HomeDate({
         </div>
       </motion.div>
 
-      {TripDirection === "round trip" && (
-        <motion.div
-          layout
-          className="relative flex-1 group sm:min-w-[10em] lg:max-w-[13em]"
-        >
-          <button className="hover:!bg-zinc-300 transition-all bg-zinc-200 pl-10  text-left w-full p-3 px-4 rounded active:scale-95">
-            2023-3-3
-          </button>
+      <motion.div
+        layout
+        className="relative flex-1 group sm:min-w-[10em] lg:max-w-[13em]"
+      >
+        <button className="hover:!bg-zinc-300 transition-all bg-zinc-200 pl-10  text-left w-full p-3 px-4 rounded active:scale-95">
+          2023-3-3
+        </button>
 
-          <div className="absolute top-4 left-3 group-active:scale-95 transition-all">
-            <BsFillCalendar2DateFill />
+        <div className="absolute top-4 left-3 group-active:scale-95 transition-all">
+          <BsFillCalendar2DateFill />
+        </div>
+        <div className="absolute  top-4 right-3 flex gap-1">
+          <div className=" rounded ">
+            <BiChevronLeft />
           </div>
-          <div className="absolute  top-4 right-3 flex gap-1">
-            <div className=" rounded ">
-              <BiChevronLeft />
-            </div>
-            <div>
-              <BiChevronRight />
-            </div>
+          <div>
+            <BiChevronRight />
           </div>
-        </motion.div>
-      )}
+        </div>
+      </motion.div>
     </div>
   );
 }

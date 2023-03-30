@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@headlessui/react': ^1.7.13
+  '@trendyol-js/react-carousel': ^3.0.2
   '@types/node': 18.15.10
   '@types/react': 18.0.30
   '@types/react-dom': 18.0.11
@@ -21,6 +22,7 @@ specifiers:
 
 dependencies:
   '@headlessui/react': 1.7.13_biqbaboplfbrettd7655fr4n2y
+  '@trendyol-js/react-carousel': 3.0.2_react@18.2.0
   '@types/node': 18.15.10
   '@types/react': 18.0.30
   '@types/react-dom': 18.0.11
@@ -296,6 +298,14 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
+    dev: false
+
+  /@trendyol-js/react-carousel/3.0.2_react@18.2.0:
+    resolution: {integrity: sha512-V/Z7N2CXEBCNWwJfOGeE9MNfAvWj/eK/KIwoautb8mp/g9pc4ZHCIuRkmH4viUxJiv8f+WTCuPR2HBzZv8+p1w==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@types/json5/0.0.29:

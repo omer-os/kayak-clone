@@ -12,7 +12,7 @@ import { BiSearch } from "react-icons/bi";
 import { AiFillCaretDown } from "react-icons/ai";
 import PassengersComponent from "./PassengersComponent";
 
-export default function HomeSearchContainer() {
+export default function StaysSearchContainer() {
   const [From, setFrom] = useState("");
   const [OpenInput, setOpenInput] = useState<"from" | "to" | null>(null);
   const [TripDirection, setTripDirection] = useState<
@@ -39,27 +39,6 @@ export default function HomeSearchContainer() {
   const [To, setTo] = useState("");
   return (
     <div className="flex flex-col gap-2 py-4">
-      <div className="flex gap-1 sm:gap-4 flex-wrap ">
-        <HomeDropDown
-          options={["one way trip", "round trip"]}
-          State={TripDirection}
-          setState={setTripDirection}
-        />
-
-        <HomeDropDown
-          State={TripClass}
-          setState={setTripClass}
-          options={["business", "economy"]}
-        />
-
-        <button
-          onClick={() => setShowPassengersDialog(!ShowPassengersDialog)}
-          className="flex items-center gap-2 px-3 py-2 text-xs capitalize transition-all bg-white rounded active:scale-95 hover:bg-zinc-100"
-        >
-          passengers
-          <AiFillCaretDown />
-        </button>
-      </div>
 
       <div className="flex flex-col gap-3 lg:flex-row">
         <div className="relative flex flex-col flex-1 gap-3 sm:flex-row">
@@ -73,26 +52,7 @@ export default function HomeSearchContainer() {
             name="from"
             key={"from"}
           />
-          <motion.button
-            layout
-            onClick={() => {
-              setFrom(To);
-              setTo(From);
-            }}
-            className="absolute z-10 flex items-center justify-center w-10 h-10 p-2 rotate-90 rounded md:w-14 sm:h-auto sm:right-0 sm:top-0 bg-zinc-200 sm:relative top-10 right-4 sm:rotate-0 sm:ring-0 ring-4 ring-white"
-          >
-            <BsArrowLeftRight />
-          </motion.button>
-          <HomeInput
-            State={To}
-            setState={setTo}
-            setOpenInput={setOpenInput}
-            OpenInput={OpenInput}
-            icon={<FaPlaneArrival />}
-            placeholder="Going To"
-            name="to"
-            key={"to"}
-          />
+        
         </div>
 
         <HomeDate

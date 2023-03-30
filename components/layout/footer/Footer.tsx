@@ -7,7 +7,7 @@ import { BiDownArrow } from "react-icons/bi";
 export default function Footer({ ShowSideBar }: { ShowSideBar: boolean }) {
   return (
     <footer
-      className={`bg-gray-800 py-20 px-10
+      className={`bg-gray-800 py-20 px-5
     ${!ShowSideBar ? "md:!pl-[16em]" : "md:!px-[9em]"}
     flex lg:flex-row flex-col gap-10 text-white
     `}
