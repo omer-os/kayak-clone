@@ -39,7 +39,7 @@ export default function HomeSearchContainer() {
   const [To, setTo] = useState("");
   return (
     <div className="flex flex-col gap-2 py-4">
-      <div className="flex gap-1 sm:gap-4 flex-wrap ">
+      <div className="flex flex-wrap gap-1 sm:gap-4 ">
         <HomeDropDown
           options={["one way trip", "round trip"]}
           State={TripDirection}

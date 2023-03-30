@@ -13,22 +13,22 @@ export default function Footer({ ShowSideBar }: { ShowSideBar: boolean }) {
     `}
     >
       <div className="flex gap-10">
-        <div className="flex flex-col capitalize flex-1">
-          <div className="font-bold mb-2">Company</div>
+        <div className="flex flex-col flex-1 capitalize">
+          <div className="mb-2 font-bold">Company</div>
           <div className="text">about</div>
           <div className="text">about</div>
           <div className="text">about</div>
           <div className="text">about</div>
         </div>
-        <div className="flex flex-col capitalize flex-1">
-          <div className="font-bold mb-2">Company</div>
+        <div className="flex flex-col flex-1 capitalize">
+          <div className="mb-2 font-bold">Company</div>
           <div className="text">about</div>
           <div className="text">about</div>
           <div className="text">about</div>
           <div className="text">about</div>
         </div>
-        <div className="flex flex-col capitalize flex-1">
-          <div className="font-bold mb-2">Company</div>
+        <div className="flex flex-col flex-1 capitalize">
+          <div className="mb-2 font-bold">Company</div>
           <div className="text">about</div>
           <div className="text">about</div>
           <div className="text">about</div>

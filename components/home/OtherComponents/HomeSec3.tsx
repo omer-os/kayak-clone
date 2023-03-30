@@ -45,20 +45,20 @@ export default function HomeSec3() {
   ];
 
   return (
-    <div className="mt-10 overflow-hidden flex-1">
-      <header className="flex  justify-between items-end">
+    <div className="flex-1 mt-10 overflow-hidden">
+      <header className="flex items-end justify-between">
         <div className="flex flex-col">
-          <div className="sm:text-3 xl text-xl font-bold">Hop on, hop off</div>
+          <div className="text-xl font-bold sm:text-3 xl">Hop on, hop off</div>
           <div className="text">
             Skip the layovers and fly nonstop to these destinations
           </div>
         </div>
 
-        <Link href="/" className="text-blue-600 underline font-bold">
+        <Link href="/" className="font-bold text-blue-600 underline min-w-max">
           See More
         </Link>
       </header>
-      <div className="gap-4 sm:gap-0 grid xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 mt-4">
+      <div className="grid grid-cols-1 gap-4 mt-4 sm:gap-0 xl:grid-cols-4 lg:grid-cols-2">
         {cardData.map((i, index) => (
           <Card
             key={index + i.title}
@@ -78,20 +78,20 @@ const Card = ({ image, title, tag, price }: CardProps) => {
     <div>
       <Link
         href="/"
-        className="flex flex-col hover:bg-zinc-100 sm:p-[1em] transition-all bg-white"
+        className="flex flex-col md:hover:bg-zinc-100 sm:p-[1em] transition-all bg-white"
       >
         <div className="img relative w-full h-[23em]">
           <Image
             src={image}
             alt={title + " image"}
             fill
-            className="rounded-xl object-cover"
+            className="object-cover rounded-xl"
           />
-          <div className="absolute bottom-4 left-3 rounded bg-white p-2 text-xs font-semibold capitalize">
+          <div className="absolute p-2 text-xs font-semibold capitalize bg-white rounded bottom-4 left-3">
             {tag}
           </div>
         </div>{" "}
-        <div className="font-bold mt-2 capitalize text-lg">{title}</div>
+        <div className="mt-2 text-lg font-bold capitalize">{title}</div>
         <div className="text">from ${price}</div>
       </Link>
     </div>

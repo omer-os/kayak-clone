@@ -49,12 +49,12 @@ export default function TheDateComponent({
         }}
         className=" w-max -translate-x-[50%] -translate-y-[50%] left-[50%] top-[50%] h-max fixed z-50 flex flex-col bg-zinc-200 px-5 py-3 rounded-xl transition-all sm:scale-110"
       >
-        <nav className="justify-between text-lg items-center py-3 border-b border-zinc-300 flex">
+        <nav className="flex items-center justify-between py-3 text-lg border-b border-zinc-300">
           <div className="capitalize">Select your trip</div>
 
           <div
             onClick={() => setShowDatePicker(false)}
-            className="w-10 h-10 cursor-pointer hover:bg-zinc-300 active:scale-95 transition-all bg-white  rounded-full flex items-center justify-center"
+            className="flex items-center justify-center w-10 h-10 transition-all bg-white rounded-full cursor-pointer hover:bg-zinc-300 active:scale-95"
           >
             <MdOutlineClose />
           </div>
@@ -88,7 +88,7 @@ export default function TheDateComponent({
         <motion.div layout className="flex gap-2 mt-3">
           <motion.div
             layout
-            className="border border-zinc-300  bg-white rounded p-3 text-center flex-1"
+            className="flex-1 p-3 text-center bg-white border rounded border-zinc-300"
           >
             <p className="font-bold">Departure </p>
             <p>
@@ -102,7 +102,7 @@ export default function TheDateComponent({
           {SelectedType === "round trip" && (
             <motion.div
               layout
-              className="border border-zinc-300  bg-white rounded p-3 text-center flex-1"
+              className="flex-1 p-3 text-center bg-white border rounded border-zinc-300"
             >
               <p className="font-bold"> Return Date </p>
               <p>{formatDate(TwoWaysTripDate[0].endDate)}</p>
@@ -114,7 +114,7 @@ export default function TheDateComponent({
           onClick={() => {
             setShowDatePicker(false);
           }}
-          className="rounded font-bold text-white bg-orange-600 p-2 mt-3 active:scale-95 transition-all active:bg-orange-700"
+          className="p-2 mt-3 font-bold text-white transition-all bg-orange-600 rounded active:scale-95 active:bg-orange-700"
         >
           set date
         </button>

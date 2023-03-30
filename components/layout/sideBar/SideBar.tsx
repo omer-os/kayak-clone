@@ -21,7 +21,7 @@ export default function SideBar({ ShowSideBar, setShowSideBar }: any) {
 
   return (
     <motion.div
-      className={`bg-white z-50 flex flex-col border-r border-zinc-300 md:w-[15em] w-0  fixed top-0 bottom-0 left-0 overflow-hidden transition-all ${
+      className={`bg-white z-50 flex flex-col border-r border-zinc-300 md:w-[15em] w-0 md:sticky fixed top-0 bottom-0 left-0 overflow-hidden transition-all ${
         ShowSideBar && "md:!w-[4em] w-full"
       }`}
     >
@@ -34,14 +34,14 @@ export default function SideBar({ ShowSideBar, setShowSideBar }: any) {
       >
         <button
           onClick={() => setShowSideBar(!ShowSideBar)}
-          className="p-2 bg-white z-50 relative hover:bg-zinc-300 rounded transition-all active:scale-90 "
+          className="relative z-50 p-2 transition-all bg-white rounded hover:bg-zinc-300 active:scale-90 "
         >
           {!ShowSideBar ? <HiOutlineMenu size={20} /> : <IoClose size={20} />}
         </button>
       </div>
 
-      <div className="flex m-2 flex-col mt-20 gap-1">
-        <div className="hover:bg-zinc-300 rounded flex gap-4 min-w-max items-center capitalize py-2 px-4">
+      <div className="flex flex-col gap-1 m-2 mt-20">
+        <div className="flex items-center gap-4 px-4 py-2 capitalize rounded hover:bg-zinc-300 min-w-max">
           <HiOutlineUserCircle size={20} />
           {!ShowSideBar && <p className="">Sign in</p>}
         </div>
@@ -152,7 +152,7 @@ const ListItem = ({ Icon, ShowSideBar, text, link, focus }: ListItemProps) => {
   return (
     <Link
       href={link}
-      className={`active:scale-95 rounded flex gap-4 items-center text-sm capitalize py-3 px-4 transition-all relative min-w-max hover:ring
+      className={`active:scale-95 rounded flex gap-4 items-center text-sm capitalize py-3 px-4 transition-all relative min-w-max hover:bg-zinc-200
       ${focus && "font-bold"}`}
     >
       {focus && (

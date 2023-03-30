@@ -39,7 +39,6 @@ export default function StaysSearchContainer() {
   const [To, setTo] = useState("");
   return (
     <div className="flex flex-col gap-2 py-4">
-
       <div className="flex flex-col gap-3 lg:flex-row">
         <div className="relative flex flex-col flex-1 gap-3 sm:flex-row">
           <HomeInput
@@ -52,7 +51,6 @@ export default function StaysSearchContainer() {
             name="from"
             key={"from"}
           />
-        
         </div>
 
         <HomeDate

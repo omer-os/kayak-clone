@@ -9,12 +9,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div
-      className="w-full m-auto mt-10 
-    transition-all
-    "
-    >
-      <>{children}</>
+    <div className="bg-[#192024] -z-10">
+      <div className="pb-20">{children}</div>
     </div>
   );
 }

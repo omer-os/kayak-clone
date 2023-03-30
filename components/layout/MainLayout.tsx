@@ -14,7 +14,7 @@ export default function MainLayout({
 
   return (
     <>
-      <div className="flex h-screen overflow-y-scroll">
+      <div className="flex h-screen overflow-hidden">
         <Suspense fallback={<LoadingSideBar />}>
           <SideBar ShowSideBar={ShowSideBar} setShowSideBar={setShowSideBar} />
         </Suspense>
@@ -24,14 +24,11 @@ export default function MainLayout({
             ShowSideBar={ShowSideBar}
             setShowSideBar={setShowSideBar}
           />
-          <div
-            className={` relative z-20  transition-all 
-            ${!ShowSideBar ? "md:!pl-[16em]" : "md:!pl-[6em]"}`}
-          >
+          <div className={`overflow-y-scroll min-h-screen relative`}>
             {children}
-          </div>
 
-          <Footer ShowSideBar={ShowSideBar} />
+            <Footer ShowSideBar={ShowSideBar} />
+          </div>
         </div>
       </div>
     </>

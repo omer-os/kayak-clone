@@ -8,6 +8,7 @@ const nextConfig = {
       "images.unsplash.com",
       "media.istockphoto.com",
       "plus.unsplash.com",
+      "content.r9cdn.net",
     ],
   },
 };

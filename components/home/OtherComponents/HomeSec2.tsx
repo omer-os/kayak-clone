@@ -9,11 +9,11 @@ import {
 export default function HomeSec2() {
   return (
     <div className="mt-10">
-      <div className="sm:text-2xl text-xl font-bold">
+      <div className="text-xl font-bold sm:text-2xl">
         What KAYAK brings to the table.
       </div>
 
-      <div className="grid mt-4 sm:mt-6 lg:grid-cols-4 sm:grid-cols-2 gap-3">
+      <div className="grid gap-3 mt-4 sm:mt-6 lg:grid-cols-4 sm:grid-cols-2">
         {[
           {
             title: "Big names, great deals",
@@ -40,7 +40,7 @@ export default function HomeSec2() {
         ].map((i, index) => (
           <div
             key={index}
-            className="flex sm:flex-col px-3 sm:py-3 py-5 sm:rounded transition-all sm:border border-y border-zinc-300 sm:gap-0 gap-3"
+            className="flex gap-3 px-3 py-5 transition-all sm:flex-col sm:py-3 sm:rounded sm:border border-y border-zinc-300 sm:gap-0"
           >
             <div className="min-w-[2.5em] w-[2.5em] h-[2.5em] rounded bg-orange-600/40 flex items-center justify-center text-orange-600">
               {i.icon}

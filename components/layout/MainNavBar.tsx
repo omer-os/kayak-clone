@@ -26,9 +26,7 @@ export default function MainNavBar({ ShowSideBar, setShowSideBar }: any) {
     <div
       className={`lg:sticky fixed right-0 top-0 left-0 flex justify-between py-3 px-4 items-center border-b border-zinc-300 bg-white z-40 ${
         scrolled && "!shadow-xl"
-      } shadow-none transition-all sm:pl-0 pl-16
-      ${!ShowSideBar ? "md:!pl-[17em]" : "md:!pl-[7em]"}
-      `}
+      } shadow-none transition-all sm:pl-10 pl-16`}
     >
       <Link
         href={"/"}
@@ -38,23 +36,25 @@ export default function MainNavBar({ ShowSideBar, setShowSideBar }: any) {
           src="/images/logo.svg"
           alt="logo"
           fill
-          className="md:object-contain object-cover object-left"
+          className="object-cover object-left md:object-contain"
         />
       </Link>
 
-      <div className="flex items-center sm:gap-3 gap-2">
-        <Link className="sm:flex hidden" href="/">
+      <div className="flex items-center gap-2 sm:gap-3">
+        <Link className="hidden sm:flex hover:font-bold" href="/business">
           Business
         </Link>
-        <Link href="/">Trips</Link>
+        <Link className="hover:font-bold" href="/">
+          Trips
+        </Link>
         <div className="h-6 w-0.5 bg-zinc-600" />
 
-        <Link href="/" className="hover:bg-zinc-300 p-1 rounded">
+        <Link href="/" className="p-1 rounded hover:bg-zinc-300">
           <AiFillHeart size={24} />
         </Link>
 
         <Link
-          className="flex font-semibold capitalize px-3 py-2 gap-2 rounded border border-black sm:text-md text-sm items-center"
+          className="flex items-center gap-2 px-3 py-2 text-sm font-semibold capitalize border border-black rounded sm:text-md"
           href="/"
         >
           <span>

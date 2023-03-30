@@ -35,11 +35,11 @@ export default function HomeDate({
           2023-3-3
         </button>
 
-        <div className="absolute top-4 left-3 group-active:scale-95 transition-all">
+        <div className="absolute transition-all top-4 left-3 group-active:scale-95">
           <BsFillCalendar2DateFill />
         </div>
-        <div className="absolute  top-4 right-3 flex gap-1">
-          <div className=" rounded ">
+        <div className="absolute flex gap-1 top-4 right-3">
+          <div className="rounded ">
             <BiChevronLeft />
           </div>
           <div>
@@ -57,11 +57,11 @@ export default function HomeDate({
             2023-3-3
           </button>
 
-          <div className="absolute top-4 left-3 group-active:scale-95 transition-all">
+          <div className="absolute transition-all top-4 left-3 group-active:scale-95">
             <BsFillCalendar2DateFill />
           </div>
-          <div className="absolute  top-4 right-3 flex gap-1">
-            <div className=" rounded ">
+          <div className="absolute flex gap-1 top-4 right-3">
+            <div className="rounded ">
               <BiChevronLeft />
             </div>
             <div>
