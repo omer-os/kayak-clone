@@ -6,7 +6,7 @@ export default function FlightsLsTop() {
   const [SelectedFilter, setSelectedFilter] = useState("cheapest");
 
   return (
-    <div className="bg-white divide-x flex gap-2 p-2 border border-zinc-300 shadow-xl rounded-xl">
+    <div className="bg-white divide-x flex max-w-4xl gap-2 p-2 border border-zinc-300 shadow-xl rounded-xl">
       {[
         {
           name: "cheapest",

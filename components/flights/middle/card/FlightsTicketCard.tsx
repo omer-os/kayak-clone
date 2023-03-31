@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { BsChevronDown } from "react-icons/bs";
+import * as Popover from "@radix-ui/react-popover";
 
 export default function FlightsTicketCard() {
   return (
@@ -44,33 +45,84 @@ export default function FlightsTicketCard() {
           </div>
 
           <div className="flex min-w-max mt-2 font-bold bg-gradient-to-br from-orange-500 to-orange-700 text-white rounded divide-x-2 h-max">
-            <button className="flex-1 text-sm px-5 py-2 capitalize flex items-center justify-center">
+            <button className="flex-1 active:scale-95 transition-all text-sm px-5 py-2 capitalize flex items-center justify-center">
               view deal
             </button>
 
-            <button className="px-3 flex items-center justify-center">
-              <BsChevronDown />
-            </button>
+            <Popover.Root>
+              <Popover.Trigger className="px-3 active:scale-95 transition-all flex items-center justify-center">
+                <BsChevronDown />
+              </Popover.Trigger>
+
+              <Popover.Portal>
+                <Popover.Content className="bg-white z-50 rounded-lg overflow-hidden right-0 flex flex-col shadow-xl text-sm">
+                  <div className="text-black capitalize">
+                    {[
+                      {
+                        name: "kiwi.com",
+                        price: 293,
+                      },
+                      {
+                        name: "studentUniverse",
+                        price: 100,
+                      },
+                    ].map((i) => (
+                      <button
+                        key={i.name}
+                        className="hover:bg-zinc-200 w-full p-3 flex gap-2"
+                      >
+                        <span className="font-bold">${i.price}</span>
+                        <span>{i.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </Popover.Content>
+              </Popover.Portal>
+            </Popover.Root>
           </div>
         </div>
       </div>
 
-      <div className="flex gap-2 absolute top-2 right-2">
-        <div className="bg-zinc-200 py-1 px-3 rounded font-bold">
-          <img
-            src="/svgs/carryon.svg"
-            className="w-6 h-5 object-contain"
-            alt=""
-          />
-        </div>
-        <div className="bg-zinc-200 py-1 px-3 rounded font-bold">
-          <img
-            src="/svgs/checkedbag.svg"
-            className="w-6 h-5 object-contain"
-            alt=""
-          />
-        </div>
-      </div>
+      <Popover.Root>
+        <Popover.Trigger>
+          <div className="flex gap-2 absolute top-2 right-2">
+            <div className="bg-zinc-200 py-1 px-3 rounded font-bold">
+              <img
+                src="/svgs/carryon.svg"
+                className="w-6 h-5 object-contain"
+                alt=""
+              />
+            </div>
+            <div className="bg-zinc-200 py-1 px-3 rounded font-bold">
+              <img
+                src="/svgs/checkedbag.svg"
+                className="w-6 h-5 object-contain"
+                alt=""
+              />
+            </div>
+          </div>
+        </Popover.Trigger>
+
+        <Popover.Portal>
+          <Popover.Content className="p-3 absolute right-0 top-0 rounded-xl shadow-xl bg-white">
+            <div className="font-bold">Price breakdown</div>
+
+            <div className="mt-3 flex flex-col">
+              <div className="flex justify-between items-center">
+                <div className="flex gap-2">
+                  <span>
+                    <img
+                      src="/svgs/ticketicon.svg"
+                      className="w-3 h-3 object-cover"
+                      alt=""
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
     </div>
   );
 }
