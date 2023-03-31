@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function FlightsLsTop() {
-  const [SelectedFilter, setSelectedFilter] = useState("best");
+  const [SelectedFilter, setSelectedFilter] = useState("cheapest");
 
   return (
     <div className="bg-white divide-x flex gap-2 p-2 border border-zinc-300 shadow-xl rounded-xl">
@@ -24,7 +24,7 @@ export default function FlightsLsTop() {
           value: "quickest",
         },
       ].map((i) => (
-        <div key={i.value} className="flex-1 pl-2 relative">
+        <div key={i.value} className={`flex-1 pl-2 relative ${i.value==="best"&&"sm:flex flex-col hidden"} `}>
           <button
             onClick={() => setSelectedFilter(i.value)}
             className={`py-2 w-full text-left active:scale-95 transition-all px-3 rounded-xl hover:bg-zinc-200 `}
