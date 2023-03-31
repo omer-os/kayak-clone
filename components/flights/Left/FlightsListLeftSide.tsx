@@ -9,7 +9,7 @@ export default function FlightsListLeftSide() {
   const [enabled, setEnabled] = useState(false);
 
   return (
-    <div className="xl:flex hidden flex-col gap-4">
+    <div className="md:flex hidden flex-col gap-4">
       <div className="flex relative flex-col bg-white py-2 px-3 rounded-xl border border-zinc-300">
         <div className="font-semibold text-sm">Our Advice</div>
         <div className="text-green-700 text-lg font-bold">Buy now</div>

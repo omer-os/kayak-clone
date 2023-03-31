@@ -18,7 +18,7 @@ export default function HomeDropDown({
   const [Open, setOpen] = useState(false);
 
   return (
-    <div className="relative z-40">
+    <div className="relative z-10">
       <Listbox value={State} onChange={(e) => setState(e)}>
         <Listbox.Button
           className={

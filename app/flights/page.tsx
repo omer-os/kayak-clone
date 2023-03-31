@@ -1,10 +1,9 @@
-import FlightsListWrapper from "@/components/flights/FlightsListWrapper";
-import React from "react";
+import FlightsListMiddle from "@/components/flights/middle/FlightsListMiddle";
 
 export default function page() {
   return (
-    <div>
-      <FlightsListWrapper />
+    <div className="">
+      <FlightsListMiddle />
     </div>
   );
 }

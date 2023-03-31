@@ -76,6 +76,7 @@ export default function SideBar({ ShowSideBar, setShowSideBar }: any) {
           },
         ].map((i) => (
           <ListItem
+            setShowSideBar={setShowSideBar}
             ShowSideBar={ShowSideBar}
             focus={pathname === i.link ? true : false}
             key={i.link}
@@ -105,6 +106,7 @@ export default function SideBar({ ShowSideBar, setShowSideBar }: any) {
           },
         ].map((i) => (
           <ListItem
+            setShowSideBar={setShowSideBar}
             ShowSideBar={ShowSideBar}
             focus={pathname === i.link ? true : false}
             key={i.link}
@@ -116,6 +118,7 @@ export default function SideBar({ ShowSideBar, setShowSideBar }: any) {
         <div className="w-full h-[0.05em] bg-zinc-300" />
 
         <ListItem
+          setShowSideBar={setShowSideBar}
           ShowSideBar={ShowSideBar}
           focus={pathname === "/feedback" ? true : false}
           Icon={MdFeedback}
@@ -126,6 +129,7 @@ export default function SideBar({ ShowSideBar, setShowSideBar }: any) {
         <div className="w-full h-[0.05em] bg-zinc-300" />
 
         <ListItem
+          setShowSideBar={setShowSideBar}
           ShowSideBar={ShowSideBar}
           focus={pathname === "/trips" ? true : false}
           Icon={BsBookmarksFill}
@@ -147,10 +151,19 @@ type ListItemProps = {
   link: string;
   focus: boolean;
   ShowSideBar: boolean;
+  setShowSideBar: any;
 };
-const ListItem = ({ Icon, ShowSideBar, text, link, focus }: ListItemProps) => {
+const ListItem = ({
+  Icon,
+  ShowSideBar,
+  text,
+  link,
+  focus,
+  setShowSideBar,
+}: ListItemProps) => {
   return (
     <Link
+      onClick={() => setShowSideBar(false)}
       href={link}
       className={`active:scale-95 rounded flex gap-4 items-center text-sm capitalize py-3 px-4 transition-all relative min-w-max hover:bg-zinc-200
       ${focus && "font-bold"}`}
