@@ -55,7 +55,11 @@ export default function FlightsTicketCard() {
               </Popover.Trigger>
 
               <Popover.Portal>
-                <Popover.Content className="bg-white z-50 rounded-lg overflow-hidden right-0 flex flex-col shadow-xl text-sm">
+                <Popover.Content
+                sideOffset={10}
+                  align="end"
+                  className="bg-white z-50 rounded-lg overflow-hidden right-0 flex flex-col shadow-xl text-sm"
+                >
                   <div className="text-black capitalize">
                     {[
                       {
@@ -83,54 +87,89 @@ export default function FlightsTicketCard() {
         </div>
       </div>
 
-      <Popover.Root>
-        <Popover.Trigger>
-          <div className="flex gap-2 absolute top-2 right-2">
-            <div className="bg-zinc-200 py-1 px-3 rounded font-bold">
+      <div className="flex gap-2 absolute top-2 right-2">
+        <Popover.Root>
+          <Popover.Trigger>
+            <div className="bg-zinc-200 active:scale-95 transition-all active:bg-zinc-300 py-1 px-3 rounded font-bold">
               <img
                 src="/svgs/carryon.svg"
                 className="w-6 h-5 object-contain"
                 alt=""
               />
-            </div>
-            <div className="bg-zinc-200 py-1 px-3 rounded font-bold">
+            </div>{" "}
+          </Popover.Trigger>
+
+          <Popover.Portal>
+            <Popover.Content
+              sideOffset={10}
+              align="end"
+              className="p-4 w-[15em] rounded-xl shadow-xl bg-white"
+            >
+              <div className="font-bold">Price breakdown</div>
+
+              <div className="mt-3 flex flex-col">
+                <div className="flex justify-between items-center">
+                  <div className="flex gap-2 items-center text-xs">
+                    <span>
+                      <img
+                        src="/svgs/ticketicon.svg"
+                        className="w-3 h-3 object-cover"
+                        alt=""
+                      />
+                    </span>
+                    Ticket price
+                  </div>
+
+                  <p>$324</p>
+                </div>
+              </div>
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+        <Popover.Root>
+          <Popover.Trigger>
+            <div className="bg-zinc-200 active:scale-95 transition-all active:bg-zinc-300 py-1 px-3 rounded font-bold">
               <img
                 src="/svgs/checkedbag.svg"
                 className="w-6 h-5 object-contain"
                 alt=""
               />
-            </div>
-          </div>
-        </Popover.Trigger>
+            </div>{" "}
+          </Popover.Trigger>
 
-        <Popover.Portal>
-          <Popover.Content className="p-3 absolute right-0 top-0 rounded-xl shadow-xl bg-white">
-            <div className="font-bold">Price breakdown</div>
+          <Popover.Portal>
+            <Popover.Content
+              sideOffset={10}
+              align="end"
+              className="p-4 w-[15em] rounded-xl shadow-xl bg-white"
+            >
+              <div className="font-bold">Price breakdown</div>
 
-            <div className="mt-3 flex flex-col">
-              <div className="flex justify-between items-center">
-                <div className="flex gap-2">
-                  <span>
-                    <img
-                      src="/svgs/ticketicon.svg"
-                      className="w-3 h-3 object-cover"
-                      alt=""
-                    />
-                  </span>
+              <div className="mt-3 flex flex-col">
+                <div className="flex justify-between items-center">
+                  <div className="flex gap-2 items-center text-xs">
+                    <span>
+                      <img
+                        src="/svgs/ticketicon.svg"
+                        className="w-3 h-3 object-cover"
+                        alt=""
+                      />
+                    </span>
+                    Ticket price
+                  </div>
+
+                  <p>$324</p>
                 </div>
               </div>
-            </div>
-          </Popover.Content>
-        </Popover.Portal>
-      </Popover.Root>
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </div>
     </div>
   );
 }
 
-/* <img
-src={
-  "https://www.freepnglogos.com/uploads/turkish-airlines-logo-emblem-3.png"
-}
-alt="turkish airlines logo"
-/>
-</div> */
+
+
+
+// https://www.kayak.com/flights/LON-NYC/2023-04-12?sort=price_a&attempt=1&lastms=1680383010937&fs=cfc=0;takeoff=1353,2300;bfc=0;transportation=transportation_plane,transportation_flight_train,transportation_flight_train_bus

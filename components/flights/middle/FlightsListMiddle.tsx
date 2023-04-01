@@ -5,12 +5,18 @@ import React, { useState } from "react";
 import FlightsLsTop from "./top/FlightsLsTop";
 import FlightsTicketCardWrapper from "./card/FlightsTicketCardWrapper";
 
-export default function FlightsListMiddle() {
+type PageProps = {
+  from: string;
+  to: string;
+  sort: "cheapest" | "best" | "quickest";
+};
+
+export default function FlightsListMiddle({ from, to, sort }: PageProps) {
   return (
     <div>
-      <FlightsLsTop />
+      <FlightsLsTop sort={sort} />
 
-      <FlightsTicketCardWrapper />
+      <FlightsTicketCardWrapper from={from} to={to} sort={sort} />
     </div>
   );
 }

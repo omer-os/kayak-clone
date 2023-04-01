@@ -2,7 +2,17 @@ import React from "react";
 import FlightsTicketCard from "./FlightsTicketCard";
 import { BsChevronDown } from "react-icons/bs";
 
-export default function FlightsTicketCardWrapper() {
+type PageProps = {
+  from: string;
+  to: string;
+  sort: string;
+};
+
+export default function FlightsTicketCardWrapper({
+  from,
+  to,
+  sort,
+}: PageProps) {
   return (
     <div className="flex mt-10 flex-col gap-3 max-w-4xl">
       <FlightsTicketCard />

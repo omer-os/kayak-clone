@@ -1,20 +1,57 @@
 "use client";
 
 import { Switch, Tab } from "@headlessui/react";
+import * as NavigationMenu from "@radix-ui/react-popover";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { BiInfoCircle } from "react-icons/bi";
 
 export default function FlightsListLeftSide() {
   const [enabled, setEnabled] = useState(false);
+
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+
+  function setNamesView(name: string, newValue: string) {
+    const params = searchParams ? new URLSearchParams(searchParams) : undefined;
+    if (params) {
+      params.set(name, newValue);
+      router.replace(`${pathname}?${params}`);
+    }
+  }
 
   return (
     <div className="md:flex hidden flex-col gap-4">
       <div className="flex relative flex-col bg-white py-2 px-3 rounded-xl border border-zinc-300">
         <div className="font-semibold text-sm">Our Advice</div>
         <div className="text-green-700 text-lg font-bold">Buy now</div>
-        <div className="text-zinc-500 text-sm mt-2">
-          Prices are unlikely to decrease within 7 days
+        <div className="text-zinc-500  text-sm mt-2">
+          <p className="relative">
+            Prices are unlikely to decrease within 7 days
+            <NavigationMenu.Root>
+              <NavigationMenu.Trigger>
+                <BiInfoCircle className="absolute bottom-0 left-[6em] text-black" />
+              </NavigationMenu.Trigger>
+
+              <NavigationMenu.Portal>
+                <NavigationMenu.Content
+                  sideOffset={10}
+                  alignOffset={30}
+                  align="start"
+                  className="p-2 rounded bg-black text-white max-w-md text-xs "
+                >
+                  Our data scientists think these are the best prices you{"'"}ll
+                  see for the next seven days. Like weather forecasters, though,
+                  they can{"'"}t be 100% certain. Our purchase advisory, shown
+                  here, is based on an analysis of current and past prices.
+                </NavigationMenu.Content>
+              </NavigationMenu.Portal>
+            </NavigationMenu.Root>
+          </p>
         </div>
 
         <div className="flex justify-between border-t border-zinc-300 pt-2 mt-3 items-center">
@@ -83,6 +120,9 @@ export default function FlightsListLeftSide() {
             },
           ].map((i, index) => (
             <div
+              onClick={() => {
+                setNamesView("stop", i.value);
+              }}
               key={index + i.name}
               className="flex cursor-pointer group justify-between items-center"
             >
